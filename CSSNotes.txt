@@ -1,0 +1,202 @@
+ THE COMMON TYPES OF SELECTORS:
+
+1.  ELEMENT SELECTORS
+
+       i. BODY SELECTOR
+        body{
+        font-size=22px;
+        }
+
+
+
+
+==>BODY SELECTOR MUST APPREAR ONCE IN A PAGE LIKE HEADING
+
+
+
+      ==> It will change the size of everthing that is inside the body of html to size of 22px; This is because of inheritance.All other elements inherit the body properties
+
+     ii. PARAGRAGH SELECTOR:
+        p{
+        color: purple;
+        font-size=30px;
+        }
+
+     ==>It will change the all paragraphs . all paragraphs would have color of purple and size of 30px;
+
+
+2.  CLASS SELECTOR it has more precedent than element selectors
+     .clasname{} 
+     example : .gray{
+                     color: purple ;
+                     background-color:green;
+                     }
+
+   The class selector can be used multiple times .. You can add it in paragraphs or artiles or section inside paragraph element like <p class="gray"> content</p>
+
+
+IMPORTANT NOTE: It's a good prectice to use class instead of pargaragph selector because we might want every paragraph look differently so it's better to use classes:
+
+
+3. Univeral Selector:
+    *{
+     background= lightblue;
+    }
+
+    ==> Universal selector selects everthing on our page .
+    ==> It is rarely used in CSS
+
+
+
+
+INHERITANCE ::
+    Search about it
+
+
+
+
+
+CHANGING PRECENDENCE OF SELECTORS :
+ <IT'S NOT A GOOD PRECTICE TO CHANGE PRECEDENCE OF SELECTORS  
+   class selectors has more precedent than element selectors like p{} h{} body{} main{} for example if we put color = red in class selector and pass it to a paragraph in html and we put color = orange in paragraph selector so we would have our paragrah as red because class selector has more precedent than paragraph .. but in order  to put color in paragraph and eleminate  the precedence of class we put the following syntax in our paragraph color
+
+
+   p{
+    color:"red"!important;   
+   }    
+
+
+==>   NOW PARAGRAH COLOR HAS MORE PRECEDENT THAN CLASS COLOR
+
+
+
+
+    
+
+
+CSS COLORS:       
+
+ colors can be used in selectors . to change the background and font colors
+
+
+  types::
+
+     1. rgba (255,255,255,0.7)
+
+
+      rgba stands for red, green,blue,alpha(each color value ranges from 0-255) and alpha value ranges from 0-1 aplpa determines the opacity of the text;
+
+
+      p{
+      color: rgba(255,0,0,0) ,<!-- it will make the text invisible because it's opacity is zero
+      } 
+
+      2. hsl it stands for hue , saturation and light  check it in css for more details
+               color: hsl()
+
+        
+
+==> colors.co is a good website.There is a option in this website where you can choose you background color as well as you can check the ratio of how much is your chosen background and text color is good to see the text and make the text readable.
+
+
+
+
+
+
+Unit and Sizes in CSS:
+    
+
+    Unit and sizes refers to the size of the heading paragraphs or all the text written inside of html and we can adjust them in plant of ways :
+
+
+     1. font-size in terms of px:
+
+
+     Font-size is used to change the font size of html elements..
+     If we don't put any font-size so by default it's size of 16px;
+     
+
+     this is how we can put a font-size in our css
+     p{
+     font-size:;
+     }       
+
+     ==> we did't put any value to our font-size so by default it's value is 16px;
+
+
+
+Disadvantages of putting font-size as px of paragraphs:
+
+
+Paragraphs px changing is very lethal in a case ;
+                                                  For example when user goes to web setting
+and increases the font of the browser to see the content bigger but in case if you have set the font size to a certain px value then your paragraphs will not change with the  setting of the website which is bad. so always dont set any value for font-size as px so that it could be changed with the browser... Instead of using font-size as px use  font-size as rem  to adjust the size of your fonts, which would change if the user change the the setting of the browser.
+
+
+     
+
+      2. rem
+          rem stands for root element. It is used to adjust the size of the fonts of html elements like h's , p and others.  By default it's value is 2. you can make it 3rem or more what ever you want.
+       
+      3. em
+        You should be very careful using em because it's value is also relatibve to the parent selector 
+                  EXAMPLE: 
+                  main{
+                  font-size= 3rem;
+                  }
+
+                  p{
+                  font-size= 2em;
+                  }
+
+                   In this situation the font size of the paragraph would be very much high beacuse the main has set the size of the font to 3 rem , Now em will look first to it's parent selectos rem and increase it's given value to relative to the parent rem value . In this case main has set font size of 3 rem , now em will make font size of 6 rem because it will multiply it's value with the parent selectors . if em don't find any parent construtors then simply multiply it's value with the default rem value which is 2 .
+ 
+      Best USE OF EM :
+           we can use em in a place where rem value is given right inside the sam selector \
+            EXAMPLE 
+            h1{
+              font-size= 3 rem;
+              padding = 0.5em;
+            }
+              
+           Now this is the best use of rem and em because everything font-size of h1 is incresed by the user by making changing is browser's view the padding will increased by .5 of the change
+           
+
+     4. ch:
+       ch is used to set how many character should a html element line should contain..
+
+       Example:
+           p{
+           width: 40ch;
+           }
+           in this case every line of the paragraphs will have only forty characters per line
+
+
+
+     5. vw/vh  and %      
+
+         vw stands for viewport width , vh stands for viewport height they are use to set how much percentage of the screen should our selectors should occupy;
+
+         Example:
+
+         body{
+         width=30vh;
+          height=50vw;
+         }
+         at this point our body will be 30 percent of the total height height of our page..
+         and height would be the 50 percent of the total width of our page if we wirte a paragraph more then 50 percent of page width then it will called overflow but still it will be written without any problem in our css but if we put background color to pink then color will filled only on assinged vh and vw portion and text that overflows will not come under that background they will simply be white
+
+
+
+         %:
+          percentage works relative to how much area is occupied by our html element
+          example:
+                See more about percentage on internet and make your concepts clear-
+
+
+
+
+
+
+
+
